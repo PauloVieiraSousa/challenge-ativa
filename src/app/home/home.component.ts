@@ -5,6 +5,9 @@ import { selectProductsList } from './store/selectors/product.selectors';
 import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Product } from './interfaces/product.interface';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { RescueModalComponent } from './components/rescue-modal/rescue-modal.component';
+import { ApplyModalComponent } from './components/apply-modal/apply-modal.component';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +18,7 @@ export class HomeComponent implements OnInit {
 
   list$: Observable<Product[]>;
 
-  constructor(private store: Store) { }
+  constructor(private store: Store, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     this.store.dispatch(loadProducts());  
@@ -28,6 +31,16 @@ export class HomeComponent implements OnInit {
     
   }
 
+
+  openModalRescue(product: Product){
+    const modalRef = this.modalService.open(RescueModalComponent);
+    modalRef.componentInstance.product = product;
+  }
+
+  openPurchase(product: Product){
+    const modalRef = this.modalService.open(ApplyModalComponent);
+    modalRef.componentInstance.product = product;
+  }
 
 
 }

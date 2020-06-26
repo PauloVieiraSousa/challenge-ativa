@@ -8,14 +8,17 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductEffects } from './store/effects/product.effects';
 import { RescueModalComponent } from './components/rescue-modal/rescue-modal.component';
+import { NgxMaskModule } from 'ngx-mask';
+import { ApplyModalComponent } from './components/apply-modal/apply-modal.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, RescueModalComponent],
+  declarations: [HomeComponent, RescueModalComponent, ApplyModalComponent],
   imports: [
     CommonModule,
-    SharedModule,
     HomeRoutingModule,
+    SharedModule,
+    NgxMaskModule.forChild(),
     StoreModule.forFeature(fromProducts.productFeatureKey, fromProducts.reducer),
     EffectsModule.forFeature([ProductEffects])
   ]

@@ -7,7 +7,7 @@
     <div class="home-list d-flex flex-column flex-sm-row flex-md-row flex-wrap">
         <ng-container *ngFor="let item of (list$ | async ) ; let index = index">
             <div class="m-2">
-                <app-card [product]="item"></app-card>
+                <app-card [product]="item" (rescue)="openModalRescue($event)" (apply)="openPurchase($event)"></app-card>
             </div>
         </ng-container>
     </div>

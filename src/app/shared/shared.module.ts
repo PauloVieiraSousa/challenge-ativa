@@ -13,9 +13,10 @@ import { NgxMaskModule } from 'ngx-mask';
     CommonModule,
     ReactiveFormsModule,
     FontAwesomeModule,
-    NgxMaskModule.forRoot(),
+    NgxMaskModule.forChild(),
   ],
   exports: [
+    NgxMaskModule,
     ReactiveFormsModule,
     FontAwesomeModule,
     CardComponent

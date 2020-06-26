@@ -11,6 +11,7 @@ import { NgxMaskModule } from 'ngx-mask'
 import { environment } from 'src/environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CommonModule,
     BrowserModule,
     AppRoutingModule,
-    SharedModule,
+    HomeModule,
     NgbModule,
     NgxMaskModule.forRoot(),
     EffectsModule.forRoot([]),
