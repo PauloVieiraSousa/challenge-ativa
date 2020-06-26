@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">MINHA LOJA</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <ng-container *ngFor="let item of list">
+                <li class="nav-item" [ngClass]="{active: item.activated}">
+                    <a [href]="item.router" class="nav-link text-uppercase">
+                        {{item.name}}
+                    </a>
+                </li>
+            </ng-container>
+        </ul>
+        <app-shopping-cart></app-shopping-cart>
+    </div>
+</nav>

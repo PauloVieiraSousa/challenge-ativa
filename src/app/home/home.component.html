@@ -1,0 +1,21 @@
+<section class="home d-flex flex-column">
+    
+    <div class="w-100 border-bottom mb-3 d-flex">
+        <h4>Destaque</h4>
+    </div>
+
+    <div class="home-list d-flex flex-column flex-sm-row flex-md-row flex-wrap">
+        <ng-container *ngFor="let item of (list$ | async ) ; let index = index">
+            <div class="m-2">
+                <app-card [product]="item"></app-card>
+            </div>
+        </ng-container>
+    </div>
+
+    <ng-container *ngIf="(list$ | async )?.length === 0">
+        <div class="alert alert-dark" role="alert">
+            <p class="m-0">Não existem itens a serem listados</p>
+        </div>
+    </ng-container>
+
+</section>
