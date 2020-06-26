@@ -4,6 +4,7 @@ import { loadProducts } from './store/action/product.actions';
 import { selectProductsList } from './store/selectors/product.selectors';
 import { filter } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { Product } from './interfaces/product.interface';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +13,7 @@ import { Observable } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
 
-  list$: Observable<any>;
+  list$: Observable<Product[]>;
 
   constructor(private store: Store) { }
 
@@ -23,7 +24,7 @@ export class HomeComponent implements OnInit {
 
 
   private initSelectors(){
-    this.list$ = this.store.pipe(select<any, any>(selectProductsList), filter( list => !!list))
+    this.list$ = this.store.pipe(select(selectProductsList), filter( list => !!list))
     
   }
 

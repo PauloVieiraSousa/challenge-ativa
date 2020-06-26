@@ -1,10 +1,11 @@
 import { Action, createReducer, on } from '@ngrx/store';
 import * as fromProductsAction from '../action/product.actions';
+import { Product } from '../../interfaces/product.interface';
 
 export const productFeatureKey = 'product';
 
 export interface State {
-  list: [],
+  list: Product[],
   loading: boolean,
   error: any
 }

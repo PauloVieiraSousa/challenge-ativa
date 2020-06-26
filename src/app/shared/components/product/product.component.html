@@ -1,9 +1,0 @@
-
-<div class="product-info d-flex flex-column align-items-center justify-content-center p-4">
-    <img [src]="image || 'assets/images/fake-product-img.png'" class="product-info__img" [alt]="title">
-    <p class="product-info__title text-uppercase text-center">{{title}}</p>
-    <p class="product-info__price text-center">
-        {{ price | currency: 'BRL': 'R$ ': '1.2-2'}}
-    </p>
-</div>
-
